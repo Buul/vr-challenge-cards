@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { uniqueId } from 'lodash';
 import { ThemeProvider } from 'styled-components';
-import { ThemeDefault, Toast } from 'vr-challenge-ds';
+import { ThemeDefault } from 'vr-challenge-ds';
 
 import Card from '../Card/Card';
 import { SkeletonCards } from '../Skeleton';
@@ -20,7 +20,6 @@ export const CardsComponent: FC<CardsProps> = ({
       {products.map(product => (
         <Card product={product} key={uniqueId()} onClickBuy={onClickBuy} />
       ))}
-      <Toast variant="success" id="success" />
     </Styled.Wrapper>
   </ThemeProvider>
 );
