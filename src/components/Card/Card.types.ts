@@ -1,4 +1,4 @@
-import { Product } from '@/flux/modules/products/types';
+import { Product } from '../Cards/Cards.types';
 
 export type CardStyledProps = {
   onClickBuy: (product: Product) => void;

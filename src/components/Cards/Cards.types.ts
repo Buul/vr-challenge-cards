@@ -1,4 +1,9 @@
-import { IRequest } from '@/models/iRequest';
+export enum RequestStatus {
+  idle = 'IDLE',
+  fetching = 'FETCHING',
+  success = 'SUCCESS',
+  error = 'ERROR',
+}
 
 export type Dimensions = {
   width: number;
@@ -20,7 +25,6 @@ export type Review = {
   reviewerName: string;
   reviewerEmail: string;
 };
-
 export type Product = {
   id: number;
   title: string;
@@ -45,17 +49,10 @@ export type Product = {
   thumbnail: string;
 };
 
-export type ProductsPayload = {
-  total: number;
-  skip: number;
-  limit: number;
+export type CardsStyledProps = {
   products: Product[];
+  status: RequestStatus;
+  onClickBuy: (product: Product) => void;
 };
 
-export interface ProductsResponse {
-  data: ProductsPayload;
-}
-
-export interface IProducts {
-  productsData: IRequest<ProductsPayload>;
-}
+export type CardsProps = CardsStyledProps;
