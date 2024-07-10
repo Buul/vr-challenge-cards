@@ -7,11 +7,10 @@ import store from '@/flux/store';
 
 import CardsStoreConnected from './CardsStoreConnected';
 
-const CardsComponent: FC = () => (
-  <ThemeProvider theme={ThemeDefault}>
-    <Provider store={store}>
+export const Cards: FC = () => (
+  <Provider store={store}>
+    <ThemeProvider theme={ThemeDefault}>
       <CardsStoreConnected />
-    </Provider>
-  </ThemeProvider>
+    </ThemeProvider>
+  </Provider>
 );
-export default CardsComponent;
