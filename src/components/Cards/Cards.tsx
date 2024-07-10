@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { uniqueId } from 'lodash';
-import { Toast } from 'vr-challenge-ds';
+import { ThemeProvider } from 'styled-components';
+import { ThemeDefault, Toast } from 'vr-challenge-ds';
 
 import Card from '../Card/Card';
 import { SkeletonCards } from '../Skeleton';
@@ -13,12 +14,14 @@ export const CardsComponent: FC<CardsProps> = ({
   products,
   onClickBuy,
 }) => (
-  <Styled.Wrapper data-testid="cards">
-    {status === RequestStatus.fetching && <SkeletonCards />}
-    {products.map(product => (
-      <Card product={product} key={uniqueId()} onClickBuy={onClickBuy} />
-    ))}
-    <Toast variant="success" id="success" />
-  </Styled.Wrapper>
+  <ThemeProvider theme={ThemeDefault}>
+    <Styled.Wrapper data-testid="cards">
+      {status === RequestStatus.fetching && <SkeletonCards />}
+      {products.map(product => (
+        <Card product={product} key={uniqueId()} onClickBuy={onClickBuy} />
+      ))}
+      <Toast variant="success" id="success" />
+    </Styled.Wrapper>
+  </ThemeProvider>
 );
 export default CardsComponent;
