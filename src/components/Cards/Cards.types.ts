@@ -1,10 +1,3 @@
-export enum RequestStatus {
-  idle = 'IDLE',
-  fetching = 'FETCHING',
-  success = 'SUCCESS',
-  error = 'ERROR',
-}
-
 export type Dimensions = {
   width: number;
   height: number;
@@ -51,7 +44,6 @@ export type Product = {
 
 export type CardsStyledProps = {
   products: Product[];
-  status: RequestStatus;
   onClickBuy: (product: Product) => void;
 };
 

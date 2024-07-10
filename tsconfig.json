@@ -28,7 +28,8 @@
   },
   "include": [
     "src",
-    "generators"
+    "generators",
+    "../vr-challenge-shell/src/components/Skeleton"
   ],
   "references": [
     {
